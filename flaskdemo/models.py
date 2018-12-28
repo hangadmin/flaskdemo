@@ -1,4 +1,4 @@
-from AD.extension import db
+from flaskdemo.extension import db
 
 
 class Person(db.Model):

@@ -1,7 +1,7 @@
 from flask_migrate import MigrateCommand
 from flask_script import Manager
 
-from AD import create_app
+from flaskdemo import create_app
 
 app = create_app('develop')
 manage = Manager(app=app)

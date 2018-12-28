@@ -1,8 +1,8 @@
 from flask import Blueprint, jsonify
 from flask_restful import Resource, reqparse, abort
 
-from AD.extension import db, cache, api
-from AD.models import Person
+from flaskdemo.extension import db, cache, api
+from flaskdemo.models import Person
 
 blue = Blueprint('blog', __name__, url_prefix='/admin')
 
@@ -37,7 +37,19 @@ parser = reqparse.RequestParser()
 parser.add_argument('task')
 
 
-# Todo
+TODOS = {
+    'todo1': {'task': 'build an API'},
+    'todo2': {'task': '?????'},
+    'todo3': {'task': 'profit!'},
+}
+
+
+def abort_if_todo_doesnt_exist(todo_id):
+    if todo_id not in TODOS:
+        abort(404, message="Todo {} doesn't exist".format(todo_id))
+
+parser = reqparse.RequestParser()
+parser.add_argument('task', type=str)
 # shows a single todo item and lets you delete a todo item
 class Todo(Resource):
     def get(self, todo_id):

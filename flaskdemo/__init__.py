@@ -1,7 +1,7 @@
 from flask import Flask
 
-from AD import settings
-from AD.extension import init_extension
+from flaskdemo import settings
+from flaskdemo.extension import init_extension
 from api.player_api import blue
 
 
