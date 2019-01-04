@@ -5,7 +5,7 @@ class Config:
     DEBUG = False
     TESTING = False
     SECRET_KEY = "110affdfghrwwqcbnyy"
-    # SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     SESSION_TYPE = 'redis'
     CACHE_DEFAULT_TIMEOUT = 60 * 2
 
