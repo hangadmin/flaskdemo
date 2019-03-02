@@ -17,7 +17,6 @@ cache = Cache(config={
 })
 api = Api()
 
-
 def init_extension(app):
     db.init_app(app)
     Session(app)

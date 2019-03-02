@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 from flask_restful import Resource, reqparse, abort
 
-from flaskdemo.extension import db, cache, api
+from flaskdemo.extensions import db, cache, api
 from flaskdemo.models import Person
 
 blue = Blueprint('blog', __name__, url_prefix='/admin')

@@ -5,9 +5,11 @@ class Config:
     DEBUG = False
     TESTING = False
     SECRET_KEY = "110affdfghrwwqcbnyy"
-    # SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     SESSION_TYPE = 'redis'
     CACHE_DEFAULT_TIMEOUT = 60 * 2
+    CELERY_BROKER_URL = 'redis://localhost:6379/3'
+    # CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
 
 def get_db_uri(dbinfo):
